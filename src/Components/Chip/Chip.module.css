@@ -1,0 +1,19 @@
+.chip {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	padding: 4px 8px;
+	color: #fff;
+	background-color: gray;
+	border-radius: 40px;
+	width: fit-content;
+	/* Fit-content says jitne mai content aa rha hai utni width rkho */
+	font-size: 14px;
+}
+
+.chip svg {
+	/* React feather use svg, so we are controlling it! */
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}

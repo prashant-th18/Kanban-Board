@@ -1,0 +1,28 @@
+.app {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	/* Navbar and app_outer will be flexed along columns */
+}
+
+.app_navbar {
+	width: 100%;
+	padding: 20px 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+.app_outer {
+	flex: 1;
+	/* Using above line, content inside "app.outer" will be stretched */
+	width: 100%;
+	overflow-x: auto;
+	/* Above deals with overflow i.e if needed will provide scroll instead of overflow*/
+	padding: 20px;
+}
+
+.app_boards {
+	min-width: fit-content;
+	display: flex;
+	gap: 30px;
+}
