@@ -1,5 +1,5 @@
 .app {
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -10,6 +10,7 @@
 	width: 100%;
 	padding: 20px 30px;
 	border-bottom: 1px solid #ccc;
+	text-align: center;
 }
 
 .app_outer {
@@ -18,11 +19,28 @@
 	width: 100%;
 	overflow-x: auto;
 	/* Above deals with overflow i.e if needed will provide scroll instead of overflow*/
-	padding: 20px;
 }
 
 .app_boards {
+	height: 100%;
+	padding: 20px;
+	padding-bottom: 4px;
 	min-width: fit-content;
 	display: flex;
 	gap: 30px;
+}
+
+.app_boards_board {
+	min-width: 290px;
+	width: 290px;
+}
+
+.app_boards_board_add {
+	background-color: #f8f8f8;
+	border-radius: 5px;
+	box-shadow: 1px 2px 0px 1px rgba(0, 0, 0, 0.15);
+}
+
+.app_boards_board_add:hover {
+	box-shadow: 1px 2px 0px 1px #ccc;
 }
