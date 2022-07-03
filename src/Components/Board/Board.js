@@ -41,8 +41,8 @@ function Board(props) {
 					<Card
 						key={item.id}
 						card={item}
-						removeCard={props.removeCard}
 						boardId={props.board.id}
+						removeCard={props.removeCard}
 						handleDragEnd={props.handleDragEnd}
 						handleDragEnter={props.handleDragEnter}
 					/>

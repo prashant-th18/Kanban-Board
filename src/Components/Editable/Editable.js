@@ -23,7 +23,8 @@ function Editable(props) {
 					}`}
 					onSubmit={(event) => {
 						event.preventDefault(); // Stop Refreshing
-						if (enteredInput && props.onSubmit) props.onSubmit(enteredInput);
+						if (enteredInput.trim().length && props.onSubmit)
+							props.onSubmit(enteredInput);
 						setEnteredInput("");
 						setShowEdit(false);
 					}}
