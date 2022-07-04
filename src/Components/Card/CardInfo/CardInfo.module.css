@@ -1,0 +1,102 @@
+.cardinfo {
+	padding: 30px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	width: 600px;
+}
+
+.cardinfo_box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.cardinfo_box_title {
+	font-weight: bold;
+	font-size: 1.3rem;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.cardinfo_box_body {
+	width: fit-content;
+}
+
+.cardinfo_box_body input {
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+.cardinfo_box_colors {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.cardinfo_box_colors li {
+	height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	list-style-type: none;
+	border: 3px solid transparent;
+	transition: 200ms;
+}
+
+.cardinfo_box_colors .active {
+	border: 3px solid yellow;
+}
+/* Whichever's color list item will have "active" class as well, it will be given yellow border */
+
+.cardinfo_box_progress_bar {
+	height: 10px;
+	border-radius: 20px;
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+.cardinfo_box_progress {
+	height: 10px;
+	border-radius: 20px;
+	background-color: #1379ec;
+}
+
+.cardinfo_box_progress_active {
+	background-color: limegreen;
+}
+
+.cardinfo_box_list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.cardinfo_task {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	padding: 8px 0;
+}
+
+.cardinfo_task input,
+.cardinfo_task svg {
+	height: 18px;
+	width: 18px;
+	cursor: pointer;
+}
+
+.cardinfo_task p {
+	flex: 1;
+	line-height: 20px;
+}
+
+.cardinfo_box_labels {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}

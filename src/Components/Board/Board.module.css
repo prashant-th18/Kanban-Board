@@ -74,6 +74,7 @@
 }
 
 .board_cards_add {
+	width: 100%;
 	background-color: #f8f8f8;
 	border-radius: 5px;
 	box-shadow: 1px 2px 0px 1px rgba(0, 0, 0, 0.15);
