@@ -45,6 +45,7 @@ function Board(props) {
 						removeCard={props.removeCard}
 						handleDragEnd={props.handleDragEnd}
 						handleDragEnter={props.handleDragEnter}
+						updateCard={props.updateCard}
 					/>
 				))}
 				<Editable

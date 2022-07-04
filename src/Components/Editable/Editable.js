@@ -4,7 +4,7 @@ import styles from "./Editable.module.css";
 
 function Editable(props) {
 	const [showEdit, setShowEdit] = useState(false);
-	const [enteredInput, setEnteredInput] = useState("");
+	const [enteredInput, setEnteredInput] = useState(props.default || "");
 	return (
 		<div className={styles.editable}>
 			{!showEdit ? (
@@ -25,8 +25,8 @@ function Editable(props) {
 						event.preventDefault(); // Stop Refreshing
 						if (enteredInput.trim().length && props.onSubmit)
 							props.onSubmit(enteredInput);
-						setEnteredInput("");
 						setShowEdit(false);
+						setEnteredInput(props.defaultValue ? props.defaultValue : "");
 					}}
 				>
 					<input
@@ -34,7 +34,6 @@ function Editable(props) {
 						type="text"
 						value={enteredInput}
 						onChange={(event) => setEnteredInput(event.target.value)}
-						// defaultValue={props.text}
 						placeholder={props.placeholder || "Add Item"}
 					/>
 					<div className={styles.editable_edit_footer}>

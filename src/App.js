@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import Board from "./Components/Board/Board";
 import Editable from "./Components/Editable/Editable";
@@ -22,30 +22,9 @@ function App() {
 		return cindex;
 	};
 
-	const [boards, setBoards] = useState([
-		{
-			id: Date.now() + Math.random(),
-			title: "To Do",
-			cards: [
-				{
-					id: Date.now() + Math.random(),
-					title: "Task 1",
-					tasks: [], // Sub-Tasks
-					labels: [{ text: "Frontend", color: "blue" }],
-					desc: "abcd",
-					date: "",
-				},
-				{
-					id: Date.now() + Math.random(),
-					title: "Task 2",
-					tasks: [], // Sub-Tasks
-					labels: [{ text: "Backend", color: "red" }],
-					desc: "abcd",
-					date: "",
-				},
-			],
-		},
-	]);
+	const [boards, setBoards] = useState(
+		JSON.parse(localStorage.getItem("kanban")) || []
+	);
 
 	const addCard = (title, bid) => {
 		// bid -> board id(i.e. the id of the board in which we want to insert the card)
@@ -133,6 +112,20 @@ function App() {
 	// Above two functions are made here, and then they will be passed because, in the end we have to delete a card from a board and insert it somewhere else.
 	// So, if we manage all these things from here, then it will be easy, as we have access to all the boards here.
 
+	const updateCard = (cid, bid, card) => {
+		const cindex = searchCard(bid, cid);
+		if (cindex < 0) return;
+
+		const tempBoards = [...boards];
+		tempBoards[searchBoard(bid)].cards[cindex] = card;
+		setBoards(tempBoards);
+	};
+
+	// local storage
+	useEffect(() => {
+		localStorage.setItem("kanban", JSON.stringify(boards));
+	}, [boards]);
+
 	return (
 		<div className={styles.app}>
 			{/* Navbar */}
@@ -151,6 +144,7 @@ function App() {
 							removeCard={removeCard}
 							handleDragEnd={handleDragEnd}
 							handleDragEnter={handleDragEnter}
+							updateCard={updateCard}
 						/>
 					))}
 					<div className={styles.app_boards_board}>
