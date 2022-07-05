@@ -8,7 +8,6 @@ import CardInfo from "./CardInfo/CardInfo";
 function Card(props) {
 	const [showDropdown, setShowDropdown] = useState(false);
 	const [showModal, setShowModal] = useState(false);
-	// console.log(props, props.desc);
 	return (
 		<>
 			{showModal && (
