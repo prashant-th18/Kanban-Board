@@ -4,7 +4,7 @@ import styles from "./Editable.module.css";
 
 function Editable(props) {
 	const [showEdit, setShowEdit] = useState(false);
-	const [enteredInput, setEnteredInput] = useState(props.default || "");
+	const [enteredInput, setEnteredInput] = useState(props?.default || "");
 	return (
 		<div className={styles.editable}>
 			{!showEdit ? (
@@ -26,7 +26,8 @@ function Editable(props) {
 						if (enteredInput.trim().length && props.onSubmit)
 							props.onSubmit(enteredInput);
 						setShowEdit(false);
-						setEnteredInput(props.defaultValue ? props.defaultValue : "");
+						if (!props.same)
+							setEnteredInput(props.default ? props.default : "");
 					}}
 				>
 					<input

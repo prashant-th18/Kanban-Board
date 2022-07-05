@@ -118,6 +118,7 @@ function CardInfo(props) {
 					</div>
 					<div className={styles.cardinfo_box_body}>
 						<Editable
+							same
 							text={values.title}
 							default={values.title}
 							placeholder={"Enter Text Here"}
@@ -139,6 +140,7 @@ function CardInfo(props) {
 					<div className={styles.cardinfo_box_body}>
 						<Editable
 							text={values.desc.length === 0 ? "Set Description" : values.desc}
+							same
 							default={values.desc}
 							placeholder={"Enter Desc Here"}
 							buttonText={"Set Description"}
@@ -206,7 +208,7 @@ function CardInfo(props) {
 							text={"Add Label"}
 							placeholder={"Enter label"}
 							buttonText={"Add"}
-							defaultValue={""}
+							default={""}
 							onSubmit={(value) => {
 								addLabel(value, activeColor);
 							}}
