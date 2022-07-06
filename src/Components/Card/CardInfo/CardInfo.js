@@ -34,7 +34,7 @@ function CardInfo(props) {
 
 	useEffect(() => {
 		props.updateCard(props.card.id, props.boardId, values);
-	}, [props, values]);
+	}, [values]);
 
 	const addLabel = (value, color) => {
 		const index = values?.labels?.findIndex((item) => item.text === value);
@@ -68,7 +68,7 @@ function CardInfo(props) {
 
 	const addTask = (value) => {
 		const task = {
-			id: Math.random() + Date.now(),
+			id: Math.random() * 2 + Date.now(),
 			text: value,
 			completed: false,
 		};
